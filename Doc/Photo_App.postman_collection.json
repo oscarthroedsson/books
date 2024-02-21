@@ -1,0 +1,680 @@
+{
+	"info": {
+		"_postman_id": "06f2c5e7-f6e4-410a-a6a4-7984eee3c4e3",
+		"name": "Photo_App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30680715"
+	},
+	"item": [
+		{
+			"name": "Photos",
+			"item": [
+				{
+					"name": "Add_One_Photo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \n\"title\": \"oookkjjjj\",\n  \"url\": \"https://images.unsplash.com/photo-1492684223066-81342ee5ff30\",\n  \"comment\": \"Confetti\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/photos/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"photos",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get_one_Photo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/photos/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"photos",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get_All_Photos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/photos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"photos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit_One_Photo",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"title\":\"Pink banana\",\n\"url\": \"https://images.unsplash.com/photo-1492684223066-81342ee5ff30\",\n\"comment\": \"Confetti\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/photos/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"photos",
+								"8"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Albums",
+			"item": [
+				{
+					"name": "Edit album",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\":\"Pink Monkeys\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/albums/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"albums",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create album",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\":\"Gunilla Person\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/albums",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"albums"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all albums",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/albums",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"albums"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get_Album_Incl_Photo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/albums/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"albums",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Link_Photos_To_Album",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n  {\n    \"id\": 15\n  }\n]\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/albums/1/photos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"albums",
+								"1",
+								"photos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Create_User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"oscar@gmail.com\",\n  \"password\": \"123abc\",\n  \"first_name\": \"oscar\",\n  \"last_name\": \"sizeError\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get_User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"profile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Railway",
+			"item": [
+				{
+					"name": "User Copy",
+					"item": [
+						{
+							"name": "Create_User",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"oscar@gmail.com\",\n  \"password\": \"123abc\",\n  \"first_name\": \"oscar\",\n  \"last_name\": \"sizeError\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://fed23-api-uppgift-1-oscar-production.up.railway.app/register",
+									"protocol": "https",
+									"host": [
+										"fed23-api-uppgift-1-oscar-production",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get_User",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://fed23-api-uppgift-1-oscar-production.up.railway.app/profile",
+									"protocol": "https",
+									"host": [
+										"fed23-api-uppgift-1-oscar-production",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"profile"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Albums Copy",
+					"item": [
+						{
+							"name": "Edit album",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\":\"Pink Monkeys\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://fed23-api-uppgift-1-oscar-production.up.railway.app/albums/1",
+									"protocol": "https",
+									"host": [
+										"fed23-api-uppgift-1-oscar-production",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"albums",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create album",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\":\"Gunilla Person\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://fed23-api-uppgift-1-oscar-production.up.railway.app/albums",
+									"protocol": "https",
+									"host": [
+										"fed23-api-uppgift-1-oscar-production",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"albums"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all albums",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://fed23-api-uppgift-1-oscar-production.up.railway.app/albums",
+									"protocol": "https",
+									"host": [
+										"fed23-api-uppgift-1-oscar-production",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"albums"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get_Album_Incl_Photo",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://fed23-api-uppgift-1-oscar-production.up.railway.app/albums/1",
+									"protocol": "https",
+									"host": [
+										"fed23-api-uppgift-1-oscar-production",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"albums",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Link_Photos_To_Album",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\n  {\n    \"id\": 15\n  }\n]\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://fed23-api-uppgift-1-oscar-production.up.railway.app/albums/1/photos",
+									"protocol": "https",
+									"host": [
+										"fed23-api-uppgift-1-oscar-production",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"albums",
+										"1",
+										"photos"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Photos Copy",
+					"item": [
+						{
+							"name": "Add_One_Photo",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \n\"title\": \"oookkjjjj\",\n  \"url\": \"https://images.unsplash.com/photo-1492684223066-81342ee5ff30\",\n  \"comment\": \"Confetti\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://fed23-api-uppgift-1-oscar-production.up.railway.app/photos/",
+									"protocol": "https",
+									"host": [
+										"fed23-api-uppgift-1-oscar-production",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"photos",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get_one_Photo",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/photos/8",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"photos",
+										"8"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get_All_Photos",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://fed23-api-uppgift-1-oscar-production.up.railway.app/photos",
+									"protocol": "https",
+									"host": [
+										"fed23-api-uppgift-1-oscar-production",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"photos"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edit_One_Photo",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\"title\":\"Pink banana\",\n\"url\": \"https://images.unsplash.com/photo-1492684223066-81342ee5ff30\",\n\"comment\": \"Confetti\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://fed23-api-uppgift-1-oscar-production.up.railway.app/photos/8",
+									"protocol": "https",
+									"host": [
+										"fed23-api-uppgift-1-oscar-production",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"photos",
+										"8"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "123abc",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "oscar@gmail.com",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

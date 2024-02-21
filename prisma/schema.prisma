@@ -1,0 +1,42 @@
+// create a client
+generator client {
+  provider = "prisma-client-js"
+}
+
+// create create the connection with the DB, with typw (provider) and the url from env file
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL") // env() gives access to the env-file
+}
+
+//Album
+model Album {
+  id     Int     @id @default(autoincrement()) @db.UnsignedInt
+  title  String  @db.VarChar(100)
+  photos Photo[] //Many to many relation
+  user   User    @relation(fields: [userId], references: [id])
+  userId Int     @db.UnsignedInt
+}
+
+// Photo
+model Photo {
+  id      Int     @id @default(autoincrement()) @db.UnsignedInt
+  title   String  @db.VarChar(100)
+  url     String
+  comment String? @db.VarChar(500)
+  albums  Album[] //Many to many relation
+  User    User    @relation(fields: [userId], references: [id])
+  userId  Int     @db.UnsignedInt
+}
+
+// User
+
+model User {
+  id         Int     @id @default(autoincrement()) @db.UnsignedInt
+  first_name String  @db.VarChar(16)
+  last_name  String  @db.VarChar(32)
+  email      String  @unique @db.VarChar(100)
+  password   String  @db.VarChar(100)
+  albums     Album[] //Many to many relation
+  photos     Photo[] //Many to many relation
+}
